@@ -1,0 +1,76 @@
+/* 基本設定 */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #000; /* 背景が透過した場合のフォールバック */
+    /* ユーザーによるテキスト選択や画像ドラッグを禁止 */
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* 全体を囲むラッパー(375x812px) */
+#wrapper {
+    position: relative;
+    width: 375px;
+    height: 812px;
+    margin: 0 auto; /* PCでの表示時に一応中央寄せ */
+    background: url('images/p3/bg_2.png') no-repeat center top;
+    background-size: 375px 812px; /* 画像を拡大縮小せずぴったり表示 */
+    overflow: hidden; /* はみ出した要素を非表示に */
+}
+
+/* 画像がクリックやドラッグの対象にならないように設定 */
+img {
+    pointer-events: none;
+    /* 画像の表示崩れを防ぐ */
+    vertical-align: bottom;
+}
+
+
+/* --- 各要素の配置（ここをピクセルパーフェクトに調整） --- */
+
+/* ヘッダー: お試し鑑定 */
+.header-area {
+    position: absolute;
+    top: 65px; /* 完成形イメージに合わせて調整 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* ステージ */
+.stage-area {
+    position: absolute;
+    top: 152px; /* 完成形イメージに合わせて調整 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* 質問 */
+.question-area {
+    position: absolute;
+    top: 228px; /* 完成形イメージに合わせて調整 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* 選択肢エリア */
+.choice-area {
+    position: absolute;
+    top: 410px; /* 完成形イメージに合わせて調整 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330px; /* ボタン間の距離を確保するために幅を指定 */
+    display: flex;
+    justify-content: space-between; /* 左右のボタンを均等に配置 */
+    align-items: center;
+    z-index: 10;
+}
+/* 選択肢ボタンの画像サイズを固定 */
+.choice-area a img {
+    width: 150px; /* stone_man.png, stone_women.pngの原寸に合わせる */
+    height: 150px;
+}
